@@ -476,6 +476,59 @@ footer .footer-links a{min-height:44px}
  .session-grid{grid-template-columns:minmax(0,1fr)}
  .session-card>summary{gap:.6rem}
 }
+
+/* Opening image-choice activity */
+.brand{flex-direction:row;align-items:center;gap:.65rem;flex:none}
+.brand-logo{width:3.45rem;height:3.45rem;object-fit:contain;flex:none}
+.brand-copy{display:flex;flex-direction:column;gap:.05rem}
+.opening-exercise{padding:clamp(2rem,5vw,4rem) 0 3.5rem;background:radial-gradient(ellipse at 7% 8%,#ffedc2 0,transparent 36%),radial-gradient(ellipse at 100% 100%,#d8f0f4 0,transparent 40%),#f8f6ee;border-bottom:1px solid #d4ded5}
+.opening-top{display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,365px);align-items:end;gap:2.5rem;margin-bottom:1.45rem}
+.opening-title .eyebrow{margin-bottom:.9rem}
+.opening-title h1{max-width:18ch;font-family:var(--font);font-size:clamp(2.6rem,5.4vw,4.3rem);font-weight:820;letter-spacing:-.055em;line-height:1.04;margin-bottom:.75rem;color:#152841}
+.opening-subtitle{font-size:clamp(1.05rem,1.55vw,1.3rem);line-height:1.45;max-width:50ch;margin:0}
+.shared-prompt{background:var(--white);border:1px solid #d6e2df;border-radius:1rem;padding:1.1rem 1.25rem;box-shadow:0 8px 24px #173f3b12}
+.request-label{font-size:.84rem;font-weight:750;line-height:1.35;margin-bottom:.45rem;color:var(--green)}
+.shared-prompt blockquote{font-family:var(--display);font-size:1.02rem;line-height:1.5;margin:0 0 .8rem;color:#273c3a}
+.prepared-label{display:inline-block;margin:0;padding:.28rem .65rem;border-radius:99px;background:var(--green-light);color:#24473d;font-size:.74rem;font-weight:650;line-height:1.4}
+.artwork-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;align-items:start}
+.artwork-choice{display:flex;flex-direction:column;align-items:stretch;gap:.7rem;width:100%;padding:.55rem;border:2px solid transparent;border-radius:1rem;background:var(--white);box-shadow:0 8px 22px #173f3b20;text-align:center;transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}
+.artwork-choice img{display:block;width:100%;aspect-ratio:1;object-fit:cover;border-radius:.7rem}
+.choose-label{display:flex;align-items:center;justify-content:center;min-height:44px;width:min(100%,15rem);align-self:center;border-radius:.5rem;background:#07869c;color:white;font-size:.88rem;font-weight:700;line-height:1.3}
+.artwork-choice:hover{transform:translateY(-2px);border-color:#67b2bc}
+.artwork-choice[aria-pressed="true"]{transform:scale(1.018);border-color:#07869c;box-shadow:0 0 0 4px #07869c22,0 14px 28px #173f3b25}
+.artwork-choice[aria-pressed="true"] .choose-label{background:#145b63}
+.choice-reveal{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:1.1rem;margin-top:1.15rem;padding:1rem 1.35rem;background:#eeefff;border-radius:1.2rem}
+.choice-reveal[hidden]{display:none}
+.choice-mark{display:grid;place-items:center;width:3.5rem;height:3.5rem;border-radius:50%;background:#07869c;color:white;font-size:2rem;font-weight:800}
+.choice-message{max-width:45ch;margin:0;font-size:clamp(1.1rem,2vw,1.45rem);font-weight:780;line-height:1.35;letter-spacing:-.025em;color:#182543}
+.choice-reveal .button{min-width:14rem;background:#655bc4;color:white}
+.choice-reveal .button:hover{background:#5146ae}
+@media(max-width:850px){
+ .opening-top{grid-template-columns:minmax(0,1fr) minmax(245px,320px);gap:1.5rem}
+ .artwork-grid{gap:.7rem}
+ .choice-reveal{grid-template-columns:auto minmax(0,1fr);gap:.9rem}
+ .choice-reveal .button{grid-column:2;justify-self:start}
+}
+@media(max-width:760px){
+ .opening-exercise{padding:2rem 0 2.7rem}
+ .opening-top{grid-template-columns:1fr;gap:1rem;margin-bottom:1rem}
+ .opening-title .eyebrow{font-size:.68rem}
+ .opening-title h1{font-size:clamp(2.35rem,9vw,3.45rem);max-width:17ch}
+ .opening-subtitle{font-size:1.05rem}
+ .shared-prompt{max-width:none;padding:1rem}
+ .artwork-grid{grid-template-columns:1fr;max-width:500px;margin-inline:auto;gap:.85rem}
+ .artwork-choice{padding:.5rem;gap:.6rem}
+ .artwork-choice img{max-height:430px}
+ .choice-reveal{grid-template-columns:auto minmax(0,1fr);padding:1rem;gap:.8rem}
+ .choice-mark{width:2.8rem;height:2.8rem;font-size:1.65rem}
+ .choice-message{font-size:1.13rem}
+ .choice-reveal .button{grid-column:1/-1;width:100%}
+ .brand-logo{width:3rem;height:3rem}
+}
+@media(max-width:380px){
+ .opening-title h1{font-size:2.25rem}
+ .brand-logo{width:2.6rem;height:2.6rem}
+}
 </style>
 <style>
 /* Edition 1.1: optional action example; scoped styles preserve the first activity. */
@@ -537,103 +590,48 @@ footer .footer-links a{min-height:44px}
 <header class="site-header">
 <div class="shell header-inner">
 <a aria-label="AI and YOU by Ypifany — top of page" class="brand" href="#top">
-<span class="brand-title">AI <span class="brand-amp">&amp;</span> YOU<span aria-hidden="true" class="brand-dot"></span></span>
-<span class="brand-by">BY CHERYL ABRAM / YPIFANY</span>
+<img alt="" class="brand-logo" height="540" src="assets/free-to-be-secure.png" width="560"/>
+<span class="brand-copy"><span class="brand-title">AI <span class="brand-amp">&amp;</span> YOU<span aria-hidden="true" class="brand-dot"></span></span><span class="brand-by">BY CHERYL ABRAM / YPIFANY</span></span>
 </a>
 <nav aria-label="Main navigation"><a href="#top">Try an activity</a><a href="#journey">The 8 sessions</a><a href="#materials">Sample materials</a></nav>
 </div>
 </header>
 <main id="main">
-<section aria-labelledby="hero-heading" class="hero shell" id="top">
-<div class="hero-intro">
+<section aria-labelledby="opening-heading" class="opening-exercise" id="top">
+<div class="shell">
+<div class="opening-top">
+<div class="opening-title">
 <p class="eyebrow"><span class="pill">GRADES 6–12</span> TRY AN AI &amp; YOU ACTIVITY</p>
-<h1 id="hero-heading">AI wrote this.<br/><em>Would you use it?</em></h1>
-<p class="intro">Imagine your school club is inviting new students to an afternoon of games and drawing. AI wrote these four lines for the invitation.</p>
-<p class="task-instruction"><strong>Read the lines. Then choose what you would do with them.</strong></p>
-<p class="quiet intro-note">This is a text example. There is no song to play and no account to create.</p>
+<h1 id="opening-heading">Which one makes you want to go?</h1>
+<p class="opening-subtitle">You asked AI to make an image for a game night invitation. Which would you use?</p>
 </div>
-<figure aria-describedby="creation-note" aria-labelledby="lyric-title" class="lyric-art">
-<div class="art-top"><span>AI’S DRAFT FOR THE INVITATION</span></div>
-<div class="art-title" id="lyric-title">After<br/><span>the Bell</span></div>
-<blockquote class="lyric-text">
-      The bell fades out; our plans begin.<br/>
-      We save one seat and pull you in.<br/>
-      No perfect day, no perfect line—<br/>
-      Just this small moment, yours and mine.
-    </blockquote>
-<figcaption id="creation-note">These sample lyrics were generated by AI for the course. They are not a student’s work or a live AI response.</figcaption>
-</figure>
-<section aria-labelledby="experience-heading" class="decision-studio" id="experience">
-<h2 id="experience-heading">Would you put these lines in the invitation?</h2>
-<p class="choice-instruction">Choose one. You can change your choice.</p>
-<fieldset aria-describedby="choice-help" class="activity-choices">
-<legend class="sr-only">What would you do with the lines?</legend>
-<div class="choice-grid">
-<label class="activity-choice" for="choice-keep">
-<input id="choice-keep" name="activity-choice" type="radio" value="keep"/>
-<span><strong>Use these lines</strong><span class="choice-help">Keep the words as they are.</span></span>
-</label>
-<label class="activity-choice" for="choice-edit">
-<input id="choice-edit" name="activity-choice" type="radio" value="edit"/>
-<span><strong>Edit these lines</strong><span class="choice-help">Change some or all of the words.</span></span>
-</label>
-<label class="activity-choice" for="choice-omit">
-<input id="choice-omit" name="activity-choice" type="radio" value="omit"/>
-<span><strong>Use something else</strong><span class="choice-help">Leave these lines out.</span></span>
-</label>
-<label class="activity-choice" for="choice-pause">
-<input id="choice-pause" name="activity-choice" type="radio" value="pause"/>
-<span><strong>I’m not sure</strong><span class="choice-help">I’m not ready to choose.</span></span>
-</label>
+<aside aria-label="The same request for all three images" class="shared-prompt">
+<p class="request-label">The same request for all three images</p>
+<blockquote>“Create an image for a poster inviting teenagers to an after-school game night.”</blockquote>
+<p class="prepared-label">AI-generated examples, prepared in advance</p>
+</aside>
 </div>
-</fieldset>
-<p class="field-help" id="choice-help">This is practice, not a test. Your choice is not graded.</p>
-<p class="sr-only" id="choice-status" role="status"></p>
-<div aria-labelledby="choice-heading" class="choice-followup" hidden="" id="choice-followup">
-<h3 id="choice-heading"></h3>
-<p id="choice-message"></p>
-<div hidden="" id="edit-area">
-<label class="field-label" for="lyric-edit">Edit the words here <span class="optional">(optional)</span></label>
-<textarea aria-describedby="edit-help" autocomplete="off" id="lyric-edit" maxlength="900" rows="5" spellcheck="true"></textarea>
-<p class="field-help" id="edit-help">Change a word, keep a line, or start again. This box does not use AI. Up to 900 characters. Leave out names and private details.</p>
-<details class="small-details">
-<summary>Read AI’s original lines again</summary>
-<div class="details-body">
-<p>The bell fades out; our plans begin.<br/>
-            We save one seat and pull you in.<br/>
-            No perfect day, no perfect line—<br/>
-            Just this small moment, yours and mine.</p>
+<div aria-label="Choose the invitation image you would use" class="artwork-grid" role="group">
+<button aria-label="Choose the neon game-night collage" aria-pressed="false" class="artwork-choice" type="button">
+<img alt="A glowing game controller, dice, cards, and board-game pieces in a neon collage." height="960" loading="eager" src="assets/game-night-neon.webp" width="960"/>
+<span class="choose-label">Choose this one</span>
+</button>
+<button aria-label="Choose the scene of friends playing together" aria-pressed="false" class="artwork-choice" type="button">
+<img alt="A diverse group of teens laughing and playing a tabletop game in a warm community room." height="960" loading="eager" src="assets/game-night-together.webp" width="960"/>
+<span class="choose-label">Choose this one</span>
+</button>
+<button aria-label="Choose the bold game-piece collage" aria-pressed="false" class="artwork-choice" type="button">
+<img alt="A bold screen-print collage of dice, cards, popcorn, and board-game pieces in orange, cream, black, and teal." height="960" loading="eager" src="assets/game-night-collage.webp" width="960"/>
+<span class="choose-label">Choose this one</span>
+</button>
 </div>
-</details>
+<div aria-atomic="true" aria-live="polite" class="choice-reveal" hidden="" id="choice-reveal">
+<span aria-hidden="true" class="choice-mark">✓</span>
+<p class="choice-message" id="choice-message">Same request. Different responses. You chose what fit.</p>
+<a class="button button-dark" href="#journey">Explore AI &amp; YOU <span aria-hidden="true">→</span></a>
 </div>
-<details class="small-details" id="reason-details">
-<summary>Add a reason <span class="optional">(optional)</span></summary>
-<div class="details-body">
-<label class="field-label" for="reflection" id="reason-label">What led you to this choice?</label>
-<textarea aria-describedby="reflection-help" autocomplete="off" id="reflection" maxlength="500" rows="3"></textarea>
-<p class="field-help" id="reflection-help">A few words are enough. You can leave this blank. Up to 500 characters. Leave out names and private details.</p>
+<noscript><p class="no-script">The image choices need JavaScript. You can continue to <a href="#journey">Explore AI &amp; YOU</a> below.</p></noscript>
 </div>
-</details>
-<p class="field-help privacy-help">We do not collect what you choose or type. This page does not save your writing for another visit.</p>
-<div class="step-actions">
-<a class="button button-dark" href="#bridge">See how this fits the course <span aria-hidden="true">↓</span></a>
-<button class="text-button" id="restart-button" type="button">Start over</button>
-</div>
-<details class="small-details own-tool">
-<summary>Try it with your own AI tool</summary>
-<div class="details-body">
-<p>This page uses a prepared example. To try a new response, copy this request into an AI tool you are allowed to use.</p>
-<label class="field-label" for="public-prompt">Request to copy</label>
-<textarea id="public-prompt" readonly="" rows="5">Write four original lyric lines for an invitation to a fictional school club event. There will be games and a quiet drawing table. The invitation is for students who have never joined before. Do not copy a named artist’s style or add real names, dates, or locations.</textarea>
-<button class="button button-light copy-button" id="copy-prompt" type="button">Copy this request</button>
-<p class="field-help" id="copy-status" role="status"></p>
-<p class="field-help">Read the new response. Would you use it, edit it, or choose something else? You will be using that tool under its own rules and privacy terms.</p>
-</div>
-</details>
-</div>
-<p class="browse-without-activity"><a class="text-link" href="#journey">Skip the activity. See the 8 sessions. <span aria-hidden="true">↓</span></a></p>
-<noscript><style>.activity-choices,.choice-instruction,#choice-help{display:none}</style><p class="no-script">The buttons need JavaScript. You can still try the activity: read the lines, decide whether to use them, edit them, leave them out, or wait, and think about why. You can explore the course below.</p></noscript>
-</section>
 </section>
 <section aria-labelledby="bridge-heading" class="bridge" id="bridge">
 <div class="shell bridge-inner">
@@ -851,107 +849,21 @@ footer .footer-links a{min-height:44px}
 </div>
 </footer>
 <script>
-/* AI & YOU public sample. All writing stays on this page.
-   No analytics, AI service, account, or persistent application storage. */
+/* AI & YOU prepared image-choice activity. No live AI generation or data collection. */
 (() => {
   "use strict";
-  const byId = id => document.getElementById(id);
-  const original = [
-    "The bell fades out; our plans begin.",
-    "We save one seat and pull you in.",
-    "No perfect day, no perfect line—",
-    "Just this small moment, yours and mine."
-  ].join("\n");
-  const choices = Object.freeze({
-    keep: {
-      heading: "You chose to use these lines.",
-      message: "You would keep AI’s words in the invitation.",
-      reason: "What makes these lines fit the invitation?"
-    },
-    edit: {
-      heading: "You chose to edit these lines.",
-      message: "Try your changes below. You do not have to finish a new version to continue.",
-      reason: "What do you want your changes to do?"
-    },
-    omit: {
-      heading: "You chose to use something else.",
-      message: "You would leave these lines out of the invitation.",
-      reason: "What would you use instead, or why would you leave these lines out?"
-    },
-    pause: {
-      heading: "You are not sure yet.",
-      message: "You can leave the decision open and still explore the course.",
-      reason: "What would help you decide?"
-    }
-  });
-  const inputs = [...document.querySelectorAll('input[name="activity-choice"]')];
-  const editor = byId("lyric-edit");
-  const reflection = byId("reflection");
-  const followup = byId("choice-followup");
-  if (!inputs.length || !editor || !reflection || !followup) return;
-  const notes = {keep:"", edit:"", omit:"", pause:""};
-  let current = null;
-  editor.value = original;
-  reflection.value = "";
-  inputs.forEach(input => { input.checked = false; });
-
-  function choose(value) {
-    if (!Object.prototype.hasOwnProperty.call(choices, value)) return;
-    if (current) notes[current] = reflection.value;
-    current = value;
-    inputs.forEach(input => {
-      input.closest("label").setAttribute("data-selected", String(input.value === value));
-    });
-    byId("choice-heading").textContent = choices[value].heading;
-    byId("choice-message").textContent = choices[value].message;
-    byId("reason-label").textContent = choices[value].reason;
-    reflection.value = notes[value];
-    byId("edit-area").hidden = value !== "edit";
-    followup.hidden = false;
-    byId("choice-status").textContent = choices[value].heading +
-      (value === "edit" ? " An optional editing box is below the choices." : " An optional place to add a reason is below the choices.");
-    // Keep focus on the radio group so keyboard users can try another choice.
+  const choices = Array.from(document.querySelectorAll(".artwork-choice"));
+  const reveal = document.getElementById("choice-reveal");
+  if (choices.length && reveal) {
+    choices.forEach(choice => choice.addEventListener("click", () => {
+      choices.forEach(item => item.setAttribute("aria-pressed", String(item === choice)));
+      reveal.hidden = false;
+    }));
   }
-  inputs.forEach(input => input.addEventListener("change", () => choose(input.value)));
-  reflection.addEventListener("input", () => {
-    if (current) notes[current] = reflection.value;
-  });
-  byId("restart-button").addEventListener("click", () => {
-    const hasWriting = editor.value !== original || Object.values(notes).some(text => text.trim());
-    if (hasWriting && !window.confirm("Start over? Your writing on this page will be cleared.")) return;
-    current = null;
-    Object.keys(notes).forEach(key => { notes[key] = ""; });
-    editor.value = original;
-    reflection.value = "";
-    inputs.forEach(input => {
-      input.checked = false;
-      input.closest("label").removeAttribute("data-selected");
-    });
-    followup.hidden = true;
-    byId("edit-area").hidden = true;
-    byId("reason-details").open = false;
-    document.querySelector(".own-tool").open = false;
-    byId("copy-status").textContent = "";
-    byId("choice-status").textContent = "Your choices and writing have been cleared.";
-    inputs[0].focus();
-  });
-  byId("copy-prompt").addEventListener("click", async () => {
-    const request = byId("public-prompt");
-    const status = byId("copy-status");
-    try {
-      if (!navigator.clipboard || !window.isSecureContext) throw new Error("Clipboard unavailable");
-      await navigator.clipboard.writeText(request.value);
-      status.textContent = "Copied. Paste the request into your approved AI tool.";
-    } catch (_) {
-      request.focus();
-      request.select();
-      status.textContent = "Copy did not work here. The request is selected. Use your phone or computer’s Copy option.";
-    }
-  });
   function openLinkedSection() {
     let id;
     try { id = decodeURIComponent(location.hash.slice(1)); } catch (_) { return; }
-    const target = id && byId(id);
+    const target = id && document.getElementById(id);
     if (!target) return;
     if (target.tagName === "DETAILS") target.open = true;
     for (let parent = target.parentElement; parent; parent = parent.parentElement) {
