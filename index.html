@@ -22,7 +22,7 @@
   --display: Georgia, "Times New Roman", serif;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:1.4rem}
+html{scroll-behavior:smooth;scroll-padding-top:7rem}
 body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font);font-size:1rem;line-height:1.6}
 [hidden]{display:none!important}
 a{color:inherit;text-underline-offset:.2em;text-decoration-thickness:1px}
@@ -56,7 +56,7 @@ legend{font-weight:650;margin-bottom:.65rem}
 .optional{font-weight:400;color:var(--muted);font-size:.9em}
 .skip-link{position:absolute;top:-10rem;left:1rem;background:var(--ink);color:white;padding:.9rem 1.2rem;z-index:20;border-radius:.5rem}
 .skip-link:focus{top:1rem}
-.site-header{border-bottom:1px solid var(--soft-line)}
+.site-header{position:sticky;top:0;z-index:30;background:var(--paper);border-bottom:1px solid var(--soft-line)}
 .header-inner{display:flex;align-items:center;justify-content:space-between;gap:2rem;min-height:98px}
 .brand{text-decoration:none;display:flex;flex-direction:column;gap:.05rem}
 .brand-title{font-size:1.65rem;font-weight:800;letter-spacing:-.07em;line-height:1.1}
@@ -540,6 +540,26 @@ footer .footer-links a{min-height:44px}
 .creator-proof li{margin:.4rem 0}
 .closing-cta{margin:1.4rem 0 .4rem}
 @media (max-width:760px){.creator-layout{grid-template-columns:1fr;gap:1.5rem}.creator-photo{max-width:360px}}
+
+.pricing-section{padding-block:4.5rem;background:#eef0e6;border-block:1px solid #c8d0bd}
+.pricing-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+.pricing-card{display:flex;flex-direction:column;gap:.25rem;min-width:0;padding:1.5rem;border:1px solid #b3bfae;border-radius:.75rem;background:var(--white);box-shadow:0 6px 18px #263f3010}
+.pricing-card h3{font-size:1.3rem;margin:0 0 .45rem}
+.pricing-card p{font-size:.96rem;line-height:1.6;max-width:none;color:#405349;margin-bottom:.65rem}
+.pricing-price{font-size:1.55rem!important;line-height:1.1!important;font-weight:800;letter-spacing:-.04em;color:var(--green)!important;margin:0 0 .55rem!important}
+.pricing-facts{display:flex;flex-wrap:wrap;gap:.45rem;margin:.35rem 0 .65rem}
+.pricing-facts span{display:inline-flex;align-items:center;min-height:36px;padding:.35rem .7rem;border-radius:2rem;background:var(--green-light);font-size:.8rem;font-weight:650;color:#274b40}
+.pricing-card .pricing-note{margin-top:auto;padding-top:.6rem;font-weight:650}
+.evaluation-card{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(17rem,.8fr);gap:2rem;align-items:center;background:#e3ece1}
+.evaluation-card p{max-width:none}
+.evaluation-visual{padding:1.2rem;border:1px solid #b3bfae;border-radius:.65rem;background:var(--white)}
+.evaluation-visual-title{font-size:.73rem!important;font-weight:750;letter-spacing:.09em;text-transform:uppercase;margin-bottom:.8rem!important}
+.evaluation-lenses{display:grid;gap:.55rem}
+.evaluation-lenses>div{display:grid;grid-template-columns:5.3rem 1fr;gap:.65rem;align-items:center;padding:.75rem;border-radius:.45rem;background:#eef0e6}
+.evaluation-lenses strong{font-family:var(--display);font-size:1.05rem;color:var(--green)}
+.evaluation-lenses span{font-size:.83rem;line-height:1.45;color:#45584d}
+@media(max-width:850px){.evaluation-card{grid-template-columns:1fr;gap:1rem}}
+@media(max-width:600px){html{scroll-padding-top:8rem}.pricing-section{padding-block:3.4rem}.pricing-grid{grid-template-columns:1fr}.evaluation-card{grid-column:auto}.pricing-card{padding:1.2rem}}
 </style>
 <style>
 /* Edition 1.1: optional action example; scoped styles preserve the first activity. */
@@ -797,15 +817,44 @@ footer .footer-links a{min-height:44px}
 <div class="local-note"><span aria-hidden="true" class="note-symbol">↳</span><p><strong>Students bring in their own examples.</strong> On a page called the Local Swap Card, they choose familiar places, rules, activities, and facts to use in the lessons. This site shows a few samples, not the full guides or workbook.</p></div>
 </div>
 </section>
-<section aria-labelledby="pricing-heading" class="section shell" id="pricing">
+<section aria-labelledby="pricing-heading" class="pricing-section" id="pricing">
+<div class="shell">
 <div class="section-heading">
 <div><p class="eyebrow">PRICING AND GROUP OPTIONS</p><h2 id="pricing-heading">Choose how to bring AI &amp; YOU to your group</h2></div>
-<p>Course materials are licensed by group. Facilitation and course evaluation are available for an additional fee.</p>
+<p>Choose course materials, ask Ypifany to lead the course, or add an evaluation of the learning environment.</p>
 </div>
-<div class="participation-grid pricing-grid">
-<article><span class="pricing-label">$299</span><h3>Course materials</h3><p>One facilitator can teach all eight sessions to one group of up to 30 learners. The materials are for that group. Ask for a quote for a larger group, another group, or school-wide use.</p></article>
-<article><span class="pricing-label">Quote</span><h3>Ypifany facilitation</h3><p>Ypifany can lead the course for your group. AI &amp; YOU is designed for grades 6–12 and can be tailored for adult learners. The price depends on the group size and format.</p></article>
-<article><span class="pricing-label">Additional fee</span><h3>Evaluation for a more useful learning environment</h3><p>Many evaluations judge whether a program has merit, worth, or significance. Ypifany’s model helps organizations see how a learning environment works as a connected system. It includes the people doing the learning, the tools they use, and the relationships and rules around them. The evaluator is part of that environment, too.</p><p>The model looks for waste, such as time, effort, resources, or people’s strengths being lost or blocked. It also notices patterns that show growth, like peer support forming, skills developing, or knowledge moving into real work. The result helps you see what the environment enables, what it limits, and how to make learning more useful for the people involved.</p><p>Ypifany does this evaluation as a separate service for an extra fee. The price depends on your setting and what you need.</p></article>
+<div class="pricing-grid">
+<article class="pricing-card">
+<p class="pricing-price">$299</p>
+<h3>Course materials</h3>
+<p>One facilitator can teach the full course to one group.</p>
+<div class="pricing-facts" aria-label="This license includes"><span>Up to 30 learners</span><span>All 8 sessions</span><span>One group</span></div>
+<p class="pricing-note">For a larger group, another group, or school-wide use, ask for a quote.</p>
+</article>
+<article class="pricing-card">
+<p class="pricing-price">By quote</p>
+<h3>Ypifany facilitates</h3>
+<p>Ypifany leads AI &amp; YOU for your group. The course is designed for grades 6–12 and can be tailored for adults. Cost depends on group size and format.</p>
+<a class="small-link" href="https://www.ypifany.org/start-a-conversation">Ask about facilitation</a>
+</article>
+<article class="pricing-card evaluation-card">
+<div>
+<p class="pricing-price">Additional fee</p>
+<h3>Evaluation for a more useful learning environment</h3>
+<p>Many evaluations judge a program’s merit, worth, or significance. Ypifany’s model looks at the learning environment as a connected system of people, tools, information, relationships, and rules. The evaluator is part of that environment, too.</p>
+<p>It looks for waste, such as time, effort, resources, or people’s strengths being lost or blocked. It also notices patterns that show growth, like peer support forming, skills developing, or knowledge moving into real work. The result helps you see what the environment enables, what it limits, and how to make learning more useful for the people involved.</p>
+<p class="pricing-note">Ypifany does this evaluation as a separate service. The fee depends on your setting and what you need.</p>
+</div>
+<div class="evaluation-visual" role="img" aria-label="Evaluation can reveal waste, signs of growth, and changes that could support learning">
+<p class="evaluation-visual-title">What this view can reveal</p>
+<div class="evaluation-lenses">
+<div><strong>Waste</strong><span>Time, effort, resources, or strengths lost or blocked</span></div>
+<div><strong>Growth</strong><span>Peer support, skills, and knowledge in use</span></div>
+<div><strong>Change</strong><span>Conditions that could support more learning</span></div>
+</div>
+</div>
+</article>
+</div>
 </div>
 </section>
 <section aria-labelledby="setting-heading" class="section shell implementation" id="your-setting">
