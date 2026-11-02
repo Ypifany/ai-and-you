@@ -140,7 +140,7 @@ input[type="radio"]{width:1rem;height:1rem;accent-color:var(--green);flex-shrink
 #public-prompt{font-size:.87rem;min-height:9rem}
 .bridge{background:var(--green);color:var(--white)}
 .bridge-inner{display:grid;grid-template-columns:1.1fr 1fr;gap:5rem;padding-block:4.8rem}
-.bridge h2{font-family:var(--display);line-height:1.14;font-size:clamp(2.4rem,3.6vw,3.65rem);margin-bottom:0}
+.bridge h1{font-family:var(--display);line-height:1.14;font-size:clamp(2.4rem,3.6vw,3.65rem);margin-bottom:0}
 .light-eyebrow{color:var(--lime)}
 .bridge-copy{padding-top:1.8rem;font-size:1.04rem}
 .bridge-copy blockquote{margin:1.6rem 0;border-left:2px solid var(--lime);padding:.1rem 0 .1rem 1rem;font-size:1.18rem;line-height:1.65;color:var(--lime)}
@@ -279,7 +279,7 @@ input[type="radio"]{width:1rem;height:1rem;accent-color:var(--green);flex-shrink
  .studio-bottom a,.text-button{font-size:.79rem}
  .bridge-inner,.section-heading{display:block}
  .bridge-inner{padding-block:3rem}
- .bridge h2{font-size:2.8rem}
+ .bridge h1{font-size:2.8rem}
  .bridge-copy{padding-top:1.4rem;font-size:1rem}
  .bridge-copy blockquote{font-size:1.14rem;margin-block:1.4rem}
  .section,.materials-section{padding-block:3.2rem}
@@ -336,7 +336,7 @@ input[type="radio"]{width:1rem;height:1rem;accent-color:var(--green);flex-shrink
  .step-actions .button{width:100%;text-align:center}
  .material-image-wrap{height:225px}
  .worksheet-wrap{height:210px}
- .bridge h2{font-size:2.45rem}
+ .bridge h1{font-size:2.45rem}
  .section-heading h2{font-size:2.4rem}
 }
 @media(prefers-reduced-motion:reduce){
@@ -439,7 +439,7 @@ footer .footer-links a{min-height:44px}
   .activity-choice{min-height:104px}
   .decision-studio h2{font-size:1.4rem}
   .choice-followup{padding:1rem}
-  .bridge h2{font-size:2.4rem}
+  .bridge h1{font-size:2.4rem}
   .bridge-copy{padding-top:1.2rem}
   .section-heading h2{font-size:2.4rem}
   .resource-card h3{font-size:1.15rem}
@@ -482,10 +482,19 @@ footer .footer-links a{min-height:44px}
 .brand{flex-direction:row;align-items:center;gap:.65rem;flex:none}
 .brand-logo{width:3.45rem;height:3.45rem;object-fit:contain;flex:none}
 .brand-copy{display:flex;flex-direction:column;gap:.05rem}
+
+.video-intro{background:#e8edf3;border-bottom:1px solid #d1d9de;padding:clamp(2rem,4vw,3.5rem) 0}
+.video-intro-inner{display:grid;grid-template-columns:minmax(0,1fr) minmax(16rem,20rem);gap:2.5rem;align-items:center}
+.video-frame-wrap{width:min(100%,20rem);justify-self:center}
+.video-frame{display:block;width:100%;aspect-ratio:9/16;border:0;border-radius:1rem;background:#101010;box-shadow:0 8px 24px #173f3b20}
+.video-intro-copy{max-width:38rem}
+.video-intro h2{font-family:var(--font);font-size:clamp(1.7rem,3vw,2.35rem);font-weight:750;letter-spacing:-.03em;margin-bottom:.8rem;color:#152841}
+.video-intro-copy>p:not(.eyebrow){color:var(--muted);max-width:38ch}
+.video-intro .button{margin-top:.8rem}
 .opening-exercise{padding:clamp(2rem,5vw,4rem) 0 3.5rem;background:radial-gradient(ellipse at 7% 8%,#ffedc2 0,transparent 36%),radial-gradient(ellipse at 100% 100%,#d8f0f4 0,transparent 40%),#f8f6ee;border-bottom:1px solid #d4ded5}
 .opening-top{display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,365px);align-items:end;gap:2.5rem;margin-bottom:1.45rem}
 .opening-title .eyebrow{margin-bottom:.9rem}
-.opening-title h1{max-width:18ch;font-family:var(--font);font-size:clamp(2.6rem,5.4vw,4.3rem);font-weight:820;letter-spacing:-.055em;line-height:1.04;margin-bottom:.75rem;color:#152841}
+.opening-title h2{max-width:18ch;font-family:var(--font);font-size:clamp(2.6rem,5.4vw,4.3rem);font-weight:820;letter-spacing:-.055em;line-height:1.04;margin-bottom:.75rem;color:#152841}
 .opening-subtitle{font-size:clamp(1.05rem,1.55vw,1.3rem);line-height:1.45;max-width:50ch;margin:0}
 .shared-prompt{background:var(--white);border:1px solid #d6e2df;border-radius:1rem;padding:1.1rem 1.25rem;box-shadow:0 8px 24px #173f3b12}
 .request-label{font-size:.84rem;font-weight:750;line-height:1.35;margin-bottom:.45rem;color:var(--green)}
@@ -512,9 +521,12 @@ footer .footer-links a{min-height:44px}
 }
 @media(max-width:760px){
  .opening-exercise{padding:2rem 0 2.7rem}
+ .video-intro-inner{grid-template-columns:1fr;gap:1.2rem}
+ .video-frame-wrap{justify-self:start;width:min(100%,18rem)}
+ .video-intro-copy{grid-row:2}
  .opening-top{grid-template-columns:1fr;gap:1rem;margin-bottom:1rem}
  .opening-title .eyebrow{font-size:.68rem}
- .opening-title h1{font-size:clamp(2.35rem,9vw,3.45rem);max-width:17ch}
+ .opening-title h2{font-size:clamp(2.35rem,9vw,3.45rem);max-width:17ch}
  .opening-subtitle{font-size:1.05rem}
  .shared-prompt{max-width:none;padding:1rem}
  .artwork-grid{grid-template-columns:1fr;max-width:500px;margin-inline:auto;gap:.85rem}
@@ -527,7 +539,7 @@ footer .footer-links a{min-height:44px}
  .brand-logo{width:3rem;height:3rem}
 }
 @media(max-width:380px){
- .opening-title h1{font-size:2.25rem}
+ .opening-title h2{font-size:2.25rem}
  .brand-logo{width:2.6rem;height:2.6rem}
 }
 .creator-section{border-top:1px solid #b6c6af}
@@ -628,12 +640,41 @@ footer .footer-links a{min-height:44px}
 </div>
 </header>
 <main id="main">
-<section aria-labelledby="opening-heading" class="opening-exercise" id="top">
+<section aria-labelledby="bridge-heading" class="bridge" id="bridge">
+<div class="shell bridge-inner">
+<div>
+<p class="eyebrow light-eyebrow">ABOUT THE COURSE</p>
+<h1 id="bridge-heading">AI gives a response.<br/>You decide what to do with it.</h1>
+</div>
+<div class="bridge-copy">
+<p>In the sample, you see the request and three images AI generated from it for a game night invitation. You decide which response fits what you would use.</p>
+<p><strong>In AI &amp; YOU, students practice this with real AI tools.</strong> They make images, check information, plan activities, and create things they care about.</p>
+<p>They also choose what information to share, consider other people’s permission, and set limits before a tool takes action.</p>
+<blockquote>“AI gives me a response. I decide whether it serves as an answer to my question and what I will do with it.”</blockquote>
+<a class="text-link light-link" href="#actions">Try a sending decision <span aria-hidden="true">↓</span></a>
+</div>
+</div>
+</section>
+<section aria-labelledby="video-heading" class="video-intro">
+<div class="shell video-intro-inner">
+<div class="video-frame-wrap">
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" class="video-frame" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube-nocookie.com/embed/6EG7nDvVsCo" title="AI &amp; YOU introduction video"></iframe>
+</div>
+<div class="video-intro-copy">
+<p class="eyebrow">A QUICK INTRODUCTION</p>
+<h2 id="video-heading">See what AI &amp; YOU is about</h2>
+<p>Watch this short introduction, then try the sample activity below.</p>
+<a class="button button-dark" href="#top">Try the sample activity <span aria-hidden="true">↓</span></a>
+</div>
+</div>
+</section>
+
+<section aria-labelledby="activity-heading" class="opening-exercise" id="top">
 <div class="shell">
 <div class="opening-top">
 <div class="opening-title">
 <p class="eyebrow"><span class="pill">GRADES 6–12</span> TRY AN AI &amp; YOU ACTIVITY</p>
-<h1 id="opening-heading">Which one makes you want to attend?</h1>
+<h2 id="activity-heading">Which one makes you want to attend?</h2>
 <p class="opening-subtitle">You asked AI to make an image for a game night invitation. Which would you use?</p>
 </div>
 <aside aria-label="The same request for all three images" class="shared-prompt">
@@ -664,21 +705,7 @@ footer .footer-links a{min-height:44px}
 <noscript><p class="no-script">The image choices need JavaScript. You can continue to <a href="#journey">Explore AI &amp; YOU</a> below.</p></noscript>
 </div>
 </section>
-<section aria-labelledby="bridge-heading" class="bridge" id="bridge">
-<div class="shell bridge-inner">
-<div>
-<p class="eyebrow light-eyebrow">ABOUT THE COURSE</p>
-<h2 id="bridge-heading">AI gives a response.<br/>You decide what to do with it.</h2>
-</div>
-<div class="bridge-copy">
-<p>In the sample, you see the request and three images AI generated from it for a game night invitation. You decide which response fits what you would use.</p>
-<p><strong>In AI &amp; YOU, students practice this with real AI tools.</strong> They make images, check information, plan activities, and create things they care about.</p>
-<p>They also choose what information to share, consider other people’s permission, and set limits before a tool takes action.</p>
-<blockquote>“AI gives me a response. I decide whether it serves as an answer to my question and what I will do with it.”</blockquote>
-<a class="text-link light-link" href="#actions">Try a sending decision <span aria-hidden="true">↓</span></a>
-</div>
-</div>
-</section><section aria-labelledby="actions-heading" class="section shell action-section" id="actions">
+<section aria-labelledby="actions-heading" class="section shell action-section" id="actions">
 <div class="section-heading">
 <div><p class="eyebrow">ONE MORE THING TO TRY</p>
 <h2 id="actions-heading">A draft is ready.<br/>May AI send it?</h2></div>
@@ -934,7 +961,7 @@ footer .footer-links a{min-height:44px}
 <details class="small-details" id="accessibility-note"><summary>Accessibility and privacy</summary><div class="details-body">
 <p>You can use the page with a keyboard. There is no timer, automatic audio, or video. You can explore the course without finishing the activity. Text versions are provided for the sample document images.</p>
 <p>The site is built with WCAG 2.2 Level AA as its accessibility goal. That is a goal, not a certification. Further screen-reader and user testing is still needed. <a href="https://www.w3.org/WAI/test-evaluate/" rel="noreferrer">Read W3C’s guidance on checking accessibility.</a></p>
-<p>This preview has no account, advertising, or analytics. It does not send your choices or writing to Ypifany or an AI service. It does not save your writing for another visit. Your browser may remember form text through its own features. The website host may keep normal access logs. Other websites have their own privacy rules.</p>
+<p>This preview has no account, advertising, or analytics. It does not send your choices or writing to Ypifany or an AI service. It does not save your writing for another visit. Your browser may remember form text through its own features. The website host may keep normal access logs. Other websites have their own privacy rules. An embedded YouTube video connects to YouTube or Google when it loads or plays. Those services may receive standard connection data under their <a href="https://policies.google.com/privacy" rel="noreferrer">privacy policy</a>.</p>
 </div></details>
 <details class="small-details" id="media-note"><summary>About the example and images</summary><div class="details-body"><p>“After the Bell” is an AI-generated lyric retained from Resource A of AI &amp; YOU. It is not a recording, student work, or a live response. The invitation activity is only a website sample.</p><p>The sending activity, its approval, and its record are a fictional simulation authored for this preview. It does not operate an AI agent or contact anyone.</p><p>The document images are selected excerpts from Edition 1.1. They are not completed student work. The full guides, resource packets, and working pages are absent from the public site.</p></div></details>
 </div>
