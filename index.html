@@ -574,37 +574,25 @@ footer .footer-links a{min-height:44px}
 @media(max-width:600px){html{scroll-padding-top:8rem}.pricing-section{padding-block:3.4rem}.pricing-grid{grid-template-columns:1fr}.evaluation-card{grid-column:auto}.pricing-card{padding:1.2rem}}
 </style>
 <style>
-/* Edition 1.1: optional action example; scoped styles preserve the first activity. */
+/* Optional sending decision activity. */
 .action-section{padding-top:3.7rem}
 .action-demo{border:1px solid #637e71;border-radius:.7rem;background:#fffdf7;overflow:hidden}
 .action-demo>summary{cursor:pointer;min-height:64px;padding:1.2rem 1.4rem;font-weight:700;list-style-position:inside;font-size:1.1rem}
 .summary-note{display:block;font-size:.87rem;font-weight:400;margin-top:.35rem;color:#40584c}
 .action-demo[open]>summary{border-bottom:1px solid #b8c8b8;background:#e6eedf}
 .demo-body{padding:1.5rem;max-width:900px;margin:auto}
-.demo-label{font-size:.85rem;font-weight:750;letter-spacing:.05em;color:#284c42}
+.demo-label{font-size:.93rem;font-weight:650;color:#284c42;background:#e8efe4;padding:.85rem 1rem;border-left:3px solid #245d50}
 .demo-task{padding:1.1rem 1.2rem;background:#e9efe1;border-left:3px solid #195849;margin-block:1.4rem}
 .demo-task h3{font-size:1.15rem;margin-top:0}
 .demo-task p{margin:0;font-size:1rem}
 .draft-card{background:#f6dfc6;border:1px solid #b69574;border-radius:.5rem;padding:1.25rem;margin-bottom:1.5rem}
-.draft-card>p:not(.artifact-label){font-family:var(--display);font-size:1.35rem;white-space:pre-wrap;overflow-wrap:anywhere}
+.draft-card>p:not(.artifact-label){font-family:var(--display);font-size:1.2rem;white-space:pre-wrap;overflow-wrap:anywhere}
 .draft-card .small-details{border-color:#a99178}
 .demo-body h3{font-size:1.2rem}
-.demo-body h4{font-size:1.1rem;margin:0 0 .7rem}
 .demo-actions{display:flex;gap:.7rem;flex-wrap:wrap;align-items:center;margin:1rem 0}
 .demo-actions .button{font-size:1rem}
 .demo-status{border-left:3px solid #245d50;background:#e8efe4;padding:1rem;font-size:1rem;min-height:3.4rem}
-.demo-panel{border:1px solid #98aea0;border-radius:.5rem;padding:1.2rem;margin-block:1.4rem}
-.permission-list{display:grid;grid-template-columns:1fr;gap:0}
-.permission-list>div{display:grid;grid-template-columns:170px 1fr;gap:.9rem;padding:.8rem 0;border-bottom:1px solid #ccd7c5}
-.permission-list dt{font-weight:650}
-.permission-list dd{margin:0;overflow-wrap:anywhere}
-.approval-note{padding:1.1rem;background:#e9efe1;margin-top:1rem}
-.demo-record{border-top:1px solid #aebfad;padding-top:1.4rem;margin-top:1.8rem}
-.demo-record ol{padding-left:1.6rem}
-.demo-record li{padding-left:.25rem;margin:.6rem 0;overflow-wrap:anywhere}
-.demo-takeaway{max-width:70ch;margin-top:1.4rem}
 .demo-body textarea{width:100%;max-width:100%;font-size:1rem;line-height:1.55;border:1px solid #5d7466;border-radius:.35rem;padding:.8rem;font-family:var(--font);resize:vertical}
-.demo-body button:disabled{opacity:1;background:#e6e8e1;color:#526052;border:1px solid #8e9b8b;cursor:not-allowed}
 .safety-strands{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.2rem}
 .safety-strands article{border-top:2px solid #75937d;padding-top:1.1rem}
 .safety-strands h3{font-size:1.22rem;line-height:1.3}
@@ -625,8 +613,8 @@ footer .footer-links a{min-height:44px}
  .draft-card{padding:1rem}
  .draft-card>p:not(.artifact-label){font-size:1.18rem}
 }
-@media(forced-colors:active){.action-demo,.demo-panel,.draft-card,.demo-status,.approval-note{border:1px solid CanvasText}.demo-body button:disabled{color:GrayText}}
-@media print{.demo-actions button,#demo-request,#demo-send{display:none!important}.safety-strands{display:block}.action-demo{break-inside:auto}.demo-body{padding:0}}
+@media(forced-colors:active){.action-demo,.draft-card,.demo-status{border:1px solid CanvasText}}
+@media print{.demo-actions button{display:none!important}.safety-strands{display:block}.action-demo{break-inside:auto}.demo-body{padding:0}}
 </style></head>
 <body>
 <a class="skip-link" href="#main">Skip to main content</a>
@@ -708,74 +696,36 @@ footer .footer-links a{min-height:44px}
 <section aria-labelledby="actions-heading" class="section shell action-section" id="actions">
 <div class="section-heading">
 <div><p class="eyebrow">ONE MORE THING TO TRY</p>
-<h2 id="actions-heading">A draft is ready.<br/>May AI send it?</h2></div>
-<p>You asked for an invitation to review. Sending it is a different job.
-    This short example lets you decide what should happen next.</p>
+<h2 id="actions-heading">AI wrote an invitation.<br/>What happens next?</h2></div>
+<p>AI can draft a message. You decide whether to send it or keep it as a draft.</p>
 </div>
 <details class="action-demo" id="agent-demo">
-<summary><span>Try the sending decision</span><span class="summary-note">Prepared example · no real messages</span></summary>
+<summary><span>Try the sending decision</span><span class="summary-note">Read the prompt and response, then choose.</span></summary>
 <div class="demo-body">
-<p class="demo-label">SIMULATION — NOT A LIVE AI TOOL</p>
-<p id="demo-explanation">There are no connected accounts, addresses, or files. The draft, permission, and activity record below are made for this example. No button sends anything.</p>
+<p class="demo-label">This is a webpage simulation. It does not connect to an AI tool or send email.</p>
 <div class="demo-task">
-<h3>The job you gave AI</h3>
-<p>“Draft an invitation for our club’s games and drawing afternoon. I’ll review it before anyone receives it.”</p>
+<h3>Your AI prompt</h3>
+<p>“Draft an invitation email for our club’s after-school game night. I’ll review it before you send it.”</p>
 </div>
 <div class="draft-card">
-<p class="artifact-label">DRAFT FOR REVIEW</p>
-<p id="draft-display">Join us for games and drawing. New members are welcome. Check the club notice for the time and how to sign up.</p>
+<p class="artifact-label">AI’S RESPONSE</p>
+<p id="draft-display">Subject: Join us for game night!<br/><br/>Hi everyone,<br/><br/>Our club is hosting an after-school game night, and you’re invited. We’ll have games and snacks. New members are welcome.<br/><br/>Hope to see you there,<br/>The Club Team</p>
 <details class="small-details" id="draft-edit-details">
-<summary>Change the draft <span class="optional">(optional)</span></summary>
+<summary>Change the response <span class="optional">(optional)</span></summary>
 <div class="details-body">
-<label class="field-label" for="demo-draft">Your version</label>
-<textarea aria-describedby="demo-draft-help" autocomplete="off" id="demo-draft" maxlength="600" rows="4"></textarea>
-<p class="field-help" id="demo-draft-help">Up to 600 characters. No real names or private details. This box does not use AI. Changing an approved draft means it needs another review.</p>
+<label class="field-label" for="demo-draft">Your edits</label>
+<textarea aria-describedby="demo-draft-help" autocomplete="off" id="demo-draft" maxlength="600" rows="5"></textarea>
+<p class="field-help" id="demo-draft-help">Your edits appear in the response above.</p>
 </div>
 </details>
 </div>
 <h3>What would you do next?</h3>
-<div aria-label="Choose a next step" class="demo-actions">
-<button class="button button-dark" id="demo-review" type="button">Review sending details</button>
-<button class="button button-light" id="demo-keep" type="button">Keep it as a draft</button>
-<button class="button button-light" id="demo-pause" type="button">Pause here</button>
+<div aria-label="Choose what happens to the email" class="demo-actions">
+<button aria-pressed="false" class="button button-dark" id="demo-approve-send" type="button">Approve and send it</button>
+<button aria-pressed="false" class="button button-light" id="demo-keep" type="button">Keep it as a draft</button>
 </div>
-<p aria-atomic="true" class="demo-status" id="demo-status" role="status">The draft is ready. No sending permission has been granted in this example.</p>
-<section aria-labelledby="review-heading" class="demo-panel" hidden="" id="demo-review-panel">
-<h3 id="review-heading" tabindex="-1">What would be sent, and to whom?</h3>
-<dl class="permission-list">
-<div><dt>Message</dt><dd>The exact draft displayed above.</dd></div>
-<div><dt>Audience</dt><dd>New club members — a fictional group with no real addresses.</dd></div>
-<div><dt>Who can authorize it?</dt><dd>The club leader in this prepared example.</dd></div>
-<div><dt>Current permission</dt><dd id="demo-permission">Drafting only. Sending is off.</dd></div>
-</dl>
-<p>A request to draft is not permission to send. A written instruction is not an account setting.</p>
-<button class="button button-dark" id="demo-request" type="button">Ask for approval in this example</button>
-<div class="approval-note" hidden="" id="demo-approval">
-<h4>Prepared approval for this example</h4>
-<p>The fictional club leader has approved <strong>this exact draft for this fictional group</strong>.
-          The example now allows one send. No real person has been contacted and no account settings have changed.</p>
-<button class="button button-dark" disabled="" id="demo-send" type="button">Simulate the approved send</button>
-</div>
-</section>
-<section aria-labelledby="record-heading" class="demo-record">
-<h3 id="record-heading">What happened in this example?</h3>
-<ol id="demo-log"><li>Prepared draft displayed. Not sent.</li></ol>
-<p class="field-help">This record describes this webpage’s simulation. It is not proof of activity in another tool.</p>
-</section>
-<details class="small-details" id="demo-recovery">
-<summary>What if something had already been shared?</summary>
-<div class="details-body">
-<p><strong>Stopping a next step does not undo an earlier one.</strong> An account owner may need to review access or request a correction. Removing a link does not guarantee that every copy disappears.</p>
-<p>For students: pause, tell the named adult privately, and avoid forwarding the material to explain what happened. You do not need to show the whole group.</p>
-</div>
-</details>
-<p class="demo-takeaway">The course gives students time to examine these choices: what the task needs, who may approve it, what actually happened, and who can help.</p>
-<div class="demo-actions">
-<button class="text-button" id="demo-stop" type="button">Stop any next step in the example</button>
-<button class="text-button" id="demo-reset" type="button">Start this example over</button>
-<a class="text-link" href="#journey">Explore the sessions <span aria-hidden="true">↓</span></a>
-</div>
-<noscript><p class="no-script">The buttons need JavaScript. Without them, read the draft and consider whether to keep it, seek specific permission to send it, or pause. Nothing is sent. The rest of the course preview works without this activity.</p><style>.demo-actions button,#demo-request{display:none}</style></noscript>
+<p aria-atomic="true" class="demo-status" id="demo-status" role="status">Choose what happens next.</p>
+<noscript><p class="no-script">Read the prompt and email, then decide whether you would send it or keep it as a draft.</p><style>.demo-actions button{display:none}</style></noscript>
 </div>
 </details>
 <div aria-label="Three areas practiced in the course" class="safety-strands">
@@ -992,78 +942,30 @@ footer .footer-links a{min-height:44px}
   openLinkedSection();
 })();
 </script><script>
-/* Prepared permission simulation. No network, real messages, or persistent storage. */
+/* Prepared invitation decision. Choices stay in this page. */
 (() => {
  "use strict";
  const $=id=>document.getElementById(id);
- const draft=$("demo-draft"); if(!draft) return;
- const original="Join us for games and drawing. New members are welcome. Check the club notice for the time and how to sign up.";
- const review=$("demo-review-panel"),approval=$("demo-approval"),send=$("demo-send");
- let approvedText=null, sent=false, paused=false;
+ const draft=$("demo-draft"), display=$("draft-display");
+ if(!draft||!display) return;
+ const original="Subject: Join us for game night!\n\nHi everyone,\n\nOur club is hosting an after-school game night, and you’re invited. We’ll have games and snacks. New members are welcome.\n\nHope to see you there,\nThe Club Team";
+ const send=$("demo-approve-send"), keep=$("demo-keep"), status=$("demo-status");
  draft.value=original;
- function status(text){$("demo-status").textContent=text;}
- function log(text){const li=document.createElement("li");li.textContent=text;$("demo-log").append(li);}
- function clearApproval(){
-   approvedText=null;approval.hidden=true;send.disabled=true;
-   $("demo-permission").textContent="Drafting only. Sending is off.";
+ function choose(choice){
+   send.setAttribute("aria-pressed",String(choice==="send"));
+   keep.setAttribute("aria-pressed",String(choice==="keep"));
+   status.textContent=choice==="send"
+     ?"You approved the email to be sent."
+     :"The email stays as a draft.";
  }
- function keep(){
-   if(sent){status("The demo already recorded one send. Keeping a draft now does not undo that record. Nothing was actually sent.");return;}
-   clearApproval();paused=false;review.hidden=true;
-   status("You kept it as a draft. No sending permission is granted. You can still review it later.");
-   log("Kept as a draft. No send.");
- }
- function stop(){
-   paused=true;clearApproval();
-   status(sent ? "The next step is stopped. The earlier simulated send remains in the record; Stop does not undo it. No actual message was sent."
-    : "Further steps are paused. The draft remains unsent. You can review again or leave it here.");
-   log(sent ? "Further steps paused. Earlier simulated send not undone." : "Paused before any send.");
- }
- $("demo-review").addEventListener("click",()=>{
-   if(sent){status("One send is already recorded in this simulation. Review the record; no second send is allowed.");return;}
-   paused=false;review.hidden=false;
-   status("Review the exact draft, audience, and permission. Drafting permission alone does not allow sending.");
-   $("review-heading").focus({preventScroll:true});
- });
- $("demo-keep").addEventListener("click",keep);
- $("demo-pause").addEventListener("click",stop);
- $("demo-stop").addEventListener("click",stop);
  draft.addEventListener("input",()=>{
-   $("draft-display").textContent=draft.value || "(No draft text entered.)";
-   const hadApproval=approvedText!==null;
-   clearApproval();
-   if(sent){status("The draft changed after the simulated send. That does not change the earlier record. Nothing was actually sent.");}
-   else if(hadApproval){status("The draft changed. The earlier approval no longer applies. Request another review before any simulated send.");log("Draft changed; previous approval no longer applies.");}
+   display.textContent=draft.value || "(No email text yet.)";
+   send.setAttribute("aria-pressed","false");
+   keep.setAttribute("aria-pressed","false");
+   status.textContent="Choose what happens next.";
  });
- $("demo-request").addEventListener("click",()=>{
-   if(sent || paused){status("Review the task again before requesting permission. No further sending action is authorized.");return;}
-   if(!draft.value.trim()){status("The draft is empty. Add some words before asking for approval.");draft.focus();return;}
-   approvedText=draft.value;approval.hidden=false;send.disabled=false;
-   $("demo-permission").textContent="Simulation only: one send of this exact draft to the named fictional group.";
-   status("A prepared approval is now shown. No real person has been contacted. You may simulate this one approved action or keep the draft.");
-   log("Prepared approval displayed: this draft, this fictional group, one send.");
- });
- send.addEventListener("click",()=>{
-   if(sent || paused || approvedText===null || approvedText!==draft.value){
-     clearApproval();status("No current approval matches this action. Nothing was sent.");return;
-   }
-   sent=true;send.disabled=true;$("demo-request").disabled=true;
-   $("demo-permission").textContent="The one permitted simulated send has been used. No additional action is authorized.";
-   status("One send is marked complete in the simulation. Real messages sent: zero.");
-   log("Completed in this simulation: the approved draft was sent to the approved fictional group. No actual message was sent.");
- });
- $("demo-reset").addEventListener("click",()=>{
-   if(draft.value!==original && !window.confirm("Start this example over? Your edited draft here will be cleared.")) return;
-   approvedText=null;sent=false;paused=false;
-   draft.value=original;$("draft-display").textContent=original;
-   review.hidden=true;approval.hidden=true;send.disabled=true;$("demo-request").disabled=false;
-   $("demo-permission").textContent="Drafting only. Sending is off.";
-   $("demo-log").replaceChildren();
-   log("Prepared draft displayed. Not sent.");
-   $("draft-edit-details").open=false;$("demo-recovery").open=false;
-   status("The webpage example has restarted. No real-world action was undone.");
-   $("demo-review").focus();
- });
+ send.addEventListener("click",()=>choose("send"));
+ keep.addEventListener("click",()=>choose("keep"));
 })();
 </script></body>
 </html>
