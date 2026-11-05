@@ -139,16 +139,16 @@ input[type="radio"]{width:1rem;height:1rem;accent-color:var(--green);flex-shrink
 .copy-button{margin-top:.75rem}
 #public-prompt{font-size:.87rem;min-height:9rem}
 .bridge{background:var(--green);color:var(--white)}
-.bridge-inner{display:grid;grid-template-columns:1.1fr 1fr;gap:3rem 5rem;padding-block:3.5rem}
+.bridge-inner{display:grid;grid-template-columns:1.1fr 1fr;gap:2rem 3rem;padding-block:2.25rem}
 .decision-path{grid-column:1/-1;display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:1rem;align-items:center;list-style:none;margin:0;padding:0}
 .decision-step{min-height:6.7rem;padding:1rem 1.2rem;background:#ffffff12;border:1px solid #ffffff55;border-radius:.7rem}
 .decision-step small{display:block;color:var(--lime);font-size:.67rem;font-weight:750;letter-spacing:.1em;margin-bottom:.3rem}
 .decision-step strong{display:block;font-family:var(--display);font-size:1.3rem;line-height:1.2;font-weight:500}
 .decision-step span{display:block;font-size:.83rem;line-height:1.4;margin-top:.25rem;color:#f5f3eb}
 .decision-arrow{font-size:1.5rem;color:var(--lime);line-height:1}
-.bridge h1{font-family:var(--display);line-height:1.14;font-size:clamp(2.4rem,3.6vw,3.65rem);margin-bottom:0}
+.bridge h1{font-family:var(--display);line-height:1.08;font-size:clamp(2.35rem,4.2vw,3.2rem);margin-bottom:0}
 .light-eyebrow{color:var(--lime)}
-.bridge-copy{padding-top:1.8rem;font-size:1.04rem}
+.bridge-copy{padding-top:.6rem;font-size:1.04rem}
 .bridge-copy blockquote{margin:1.6rem 0;border-left:2px solid var(--lime);padding:.1rem 0 .1rem 1rem;font-size:1.18rem;line-height:1.65;color:var(--lime)}
 .text-link{display:inline-flex;align-items:center;gap:.8rem;min-height:44px;font-size:.93rem;font-weight:600}
 .light-link{color:var(--white)}
@@ -247,7 +247,7 @@ input[type="radio"]{width:1rem;height:1rem;accent-color:var(--green);flex-shrink
  .choice-button{padding:.6rem;font-size:.83rem;min-height:124px}
  .choice-button[aria-pressed="true"]{padding:calc(.6rem - 1px)}
  .choice-hint{font-size:.71rem}
- .section-heading,.bridge-inner{gap:2.5rem}
+ .section-heading,.bridge-inner{gap:2rem}
  .material-image-wrap{height:290px}
  .resource-card{padding:1.2rem}
 }
@@ -284,11 +284,11 @@ input[type="radio"]{width:1rem;height:1rem;accent-color:var(--green);flex-shrink
  .studio-bottom{gap:0 .7rem}
  .studio-bottom a,.text-button{font-size:.79rem}
  .bridge-inner,.section-heading{display:block}
- .bridge-inner{padding-block:3rem}
- .decision-path{grid-template-columns:1fr;gap:.55rem;margin-top:1.5rem}
+ .bridge-inner{padding-block:2rem}
+ .decision-path{grid-template-columns:1fr;gap:.4rem;margin-top:1rem}
  .decision-step{min-height:0;padding:.8rem 1rem}
  .decision-arrow{transform:rotate(90deg);justify-self:center;font-size:1.2rem}
- .bridge h1{font-size:2.8rem}
+ .bridge h1{font-size:clamp(2.1rem,7.5vw,2.7rem)}
  .bridge-copy{padding-top:1.4rem;font-size:1rem}
  .bridge-copy blockquote{font-size:1.14rem;margin-block:1.4rem}
  .section,.materials-section{padding-block:3.2rem}
@@ -345,7 +345,7 @@ input[type="radio"]{width:1rem;height:1rem;accent-color:var(--green);flex-shrink
  .step-actions .button{width:100%;text-align:center}
  .material-image-wrap{height:225px}
  .worksheet-wrap{height:210px}
- .bridge h1{font-size:2.45rem}
+ .bridge h1{font-size:clamp(2.1rem,7.5vw,2.7rem)}
  .section-heading h2{font-size:2.4rem}
 }
 @media(prefers-reduced-motion:reduce){
@@ -448,7 +448,7 @@ footer .footer-links a{min-height:44px}
   .activity-choice{min-height:104px}
   .decision-studio h2{font-size:1.4rem}
   .choice-followup{padding:1rem}
-  .bridge h1{font-size:2.4rem}
+  .bridge h1{font-size:clamp(2.1rem,7.5vw,2.7rem)}
   .bridge-copy{padding-top:1.2rem}
   .section-heading h2{font-size:2.4rem}
   .resource-card h3{font-size:1.15rem}
@@ -640,15 +640,13 @@ footer .footer-links a{min-height:44px}
 <section aria-labelledby="bridge-heading" class="bridge" id="bridge">
 <div class="shell bridge-inner">
 <div>
-<p class="eyebrow light-eyebrow">ABOUT THE COURSE</p>
-<h1 id="bridge-heading">AI gives a response.<br/>You decide what to do with it.</h1>
+<p class="eyebrow light-eyebrow">AI &amp; YOU · AN EIGHT-SESSION COURSE</p>
+<h1 id="bridge-heading">AI is already answering your child. Who’s teaching them what to do with the answer?</h1>
 </div>
 <div class="bridge-copy">
-<p>In the sample, you see the request and three images AI generated from it for a game night invitation. You decide which response fits what you would use.</p>
-<p><strong>In AI &amp; YOU, students practice this with real AI tools.</strong> They make images, check information, plan activities, and create things they care about.</p>
-<p>They also choose what information to share, consider other people’s permission, and set limits before a tool takes action.</p>
-<blockquote>“AI gives me a response. I decide whether it serves as an answer to my question and what I will do with it.”</blockquote>
-<a class="text-link light-link" href="#actions">Try a sending decision <span aria-hidden="true">↓</span></a>
+<p>AI &amp; YOU gives young people practice checking AI responses and deciding what to use, change, or leave behind.</p>
+<p>Designed for grades 6–12, the course can also be adapted for adults.</p>
+<a class="text-link light-link" href="#video-heading">See what AI &amp; YOU is about <span aria-hidden="true">↓</span></a>
 </div>
 <ol aria-label="How AI &amp; YOU approaches AI responses" class="decision-path">
 <li class="decision-step"><small>01 · YOUR PROMPT</small><strong>What do you need?</strong><span>Name the task or question.</span></li>
