@@ -139,7 +139,13 @@ input[type="radio"]{width:1rem;height:1rem;accent-color:var(--green);flex-shrink
 .copy-button{margin-top:.75rem}
 #public-prompt{font-size:.87rem;min-height:9rem}
 .bridge{background:var(--green);color:var(--white)}
-.bridge-inner{display:grid;grid-template-columns:1.1fr 1fr;gap:5rem;padding-block:4.8rem}
+.bridge-inner{display:grid;grid-template-columns:1.1fr 1fr;gap:3rem 5rem;padding-block:3.5rem}
+.decision-path{grid-column:1/-1;display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:1rem;align-items:center;list-style:none;margin:0;padding:0}
+.decision-step{min-height:6.7rem;padding:1rem 1.2rem;background:#ffffff12;border:1px solid #ffffff55;border-radius:.7rem}
+.decision-step small{display:block;color:var(--lime);font-size:.67rem;font-weight:750;letter-spacing:.1em;margin-bottom:.3rem}
+.decision-step strong{display:block;font-family:var(--display);font-size:1.3rem;line-height:1.2;font-weight:500}
+.decision-step span{display:block;font-size:.83rem;line-height:1.4;margin-top:.25rem;color:#f5f3eb}
+.decision-arrow{font-size:1.5rem;color:var(--lime);line-height:1}
 .bridge h1{font-family:var(--display);line-height:1.14;font-size:clamp(2.4rem,3.6vw,3.65rem);margin-bottom:0}
 .light-eyebrow{color:var(--lime)}
 .bridge-copy{padding-top:1.8rem;font-size:1.04rem}
@@ -279,6 +285,9 @@ input[type="radio"]{width:1rem;height:1rem;accent-color:var(--green);flex-shrink
  .studio-bottom a,.text-button{font-size:.79rem}
  .bridge-inner,.section-heading{display:block}
  .bridge-inner{padding-block:3rem}
+ .decision-path{grid-template-columns:1fr;gap:.55rem;margin-top:1.5rem}
+ .decision-step{min-height:0;padding:.8rem 1rem}
+ .decision-arrow{transform:rotate(90deg);justify-self:center;font-size:1.2rem}
  .bridge h1{font-size:2.8rem}
  .bridge-copy{padding-top:1.4rem;font-size:1rem}
  .bridge-copy blockquote{font-size:1.14rem;margin-block:1.4rem}
@@ -641,6 +650,13 @@ footer .footer-links a{min-height:44px}
 <blockquote>“AI gives me a response. I decide whether it serves as an answer to my question and what I will do with it.”</blockquote>
 <a class="text-link light-link" href="#actions">Try a sending decision <span aria-hidden="true">↓</span></a>
 </div>
+<ol aria-label="How AI &amp; YOU approaches AI responses" class="decision-path">
+<li class="decision-step"><small>01 · YOUR PROMPT</small><strong>What do you need?</strong><span>Name the task or question.</span></li>
+<li aria-hidden="true" class="decision-arrow">→</li>
+<li class="decision-step"><small>02 · AI’S RESPONSE</small><strong>What did AI give you?</strong><span>Words, images, information, or a plan.</span></li>
+<li aria-hidden="true" class="decision-arrow">→</li>
+<li class="decision-step"><small>03 · YOUR DECISION</small><strong>What will you do?</strong><span>Use it, change it, leave it, or wait.</span></li>
+</ol>
 </div>
 </section>
 <section aria-labelledby="video-heading" class="video-intro">
